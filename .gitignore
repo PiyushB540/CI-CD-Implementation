@@ -1,5 +1,4 @@
 # Environment variables
-.env
 
 # Node dependencies
 node_modules/
@@ -24,9 +23,9 @@ coverage/
 Thumbs.db
 
 # IDE files
-.vscode/
 .idea/
 
 # Optional: temp files
 *.tmp
 *.log
+config.bat
