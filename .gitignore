@@ -1,5 +1,4 @@
 # Environment variables
-.env
 
 # Node dependencies
 node_modules/
@@ -30,3 +29,4 @@ Thumbs.db
 # Optional: temp files
 *.tmp
 *.log
+config.bat
