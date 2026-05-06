@@ -17,9 +17,15 @@ router.get("/:id", async (req, res) => {
 
 // POST create user
 router.post("/", async (req, res) => {
-  const user = new User(req.body);
-  const saved = await user.save();
-  res.status(201).json(saved);
+  try {
+    const user = new User(req.body);
+    const saved = await user.save();
+    res.status(201).json(saved);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
 });
 
 // PUT update user

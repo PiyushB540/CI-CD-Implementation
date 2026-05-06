@@ -1,3 +1,5 @@
+const crypto = require("crypto");
+global.crypto = crypto;
 const mongoose = require("mongoose");
 const { MongoMemoryServer } = require("mongodb-memory-server");
 const request = require("supertest");
@@ -47,7 +49,11 @@ describe("GET /api/users", () => {
 
 describe("DELETE /api/users/:id", () => {
   it("deletes a user by id", async () => {
-    const user = await User.create({ name: "Carl", email: "carl@example.com", age:23 });
+    const user = await User.create({
+      name: "Carl",
+      email: "carl@example.com",
+      age: 23,
+    });
     const res = await request(app).delete(`/api/users/${user._id}`);
     expect(res.statusCode).toBe(200);
     expect(res.body.message).toBe("User deleted");
